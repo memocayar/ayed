@@ -4,7 +4,8 @@
 
 using namespace std;
 
-void ClaveValor::procesarClaveValor(char c, Pila<char> &pila) {
+// (no se está usando)
+void ClaveValor::procesarClave(char c, Pila<char> &pila) {
   if (c == ',') {
     while (!pila.pilavacia()) {
       if (pila.tope() == '\'') {
@@ -20,4 +21,13 @@ void ClaveValor::procesarClaveValor(char c, Pila<char> &pila) {
   } else {
     pila.apilar(c);
   }
+}
+
+bool ClaveValor::validarComillasSimples(string &partecita) {
+  for (char ch : partecita) {
+    if (ch == '\'') { // Detecta comillas simples
+      return true;    // Retorna true si encuentra comillas simples
+    }
+  }
+  return false; // Retorna false si no hay comillas simples
 }

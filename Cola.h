@@ -18,6 +18,19 @@ public:
   T ultimo() { return this->last(); }
 
   std::string imprimir(std::string s) { return this->toPrint(s); }
+
+  // Juntar todos los caracteres de la cola en un solo string
+  std::string juntar() {
+    std::string resultado;
+    Cola<T> copia(*this);
+
+    while (!copia.colavacia()) {
+      resultado += copia.tope();
+      copia.desencolar();
+    }
+
+    return resultado;
+  }
 };
 
 #endif // COLA_H
