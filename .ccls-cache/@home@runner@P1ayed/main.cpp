@@ -103,18 +103,16 @@ int main() {
     return 1;
   }
 
-  // ObjetoJSON json;
+  ObjetoJSON json;
 
-  // if (json.procesarCaracter(inputFile) == true){
-
-  // }
-  // else {
-  //     cout<<"Error en el JSON. Faltan o sobran llaves";
-  // }
-
-  size_t pos = 0;
-  stack<char> pila;
-  procesarTexto(contenidoJson, pos);
+  if (json.procesarCaracter(inputFile) == true){
+    size_t pos = 0;
+    stack<char> pila;
+    procesarTexto(contenidoJson, pos);
+  }
+  else {
+      cout<<"Error en el JSON. Faltan o sobran llaves";
+  }
 
   // Cerrar el archivo de entrada
   inputFile.close();
